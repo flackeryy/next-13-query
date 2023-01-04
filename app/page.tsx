@@ -3,10 +3,13 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
+import {usePathname, useSearchParams} from "next/navigation";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const searchParams = useSearchParams()
+  console.log(searchParams.toString())
   return (
     <main className={styles.main}>
       <div className={styles.description}>
